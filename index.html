@@ -125,7 +125,7 @@
             font-weight: 700;
             margin-bottom: 0.8rem;
             letter-spacing: -0.5px;
-            white-space: nowrap; /* Mantiene el nombre en una sola línea */
+            white-space: nowrap;
         }
 
         .hero h1 span {
@@ -139,7 +139,7 @@
             margin-bottom: 1.2rem;
         }
 
-        /* Contenedor de Idiomas Superiores */
+        /* Contenedor de Idiomas Superiores con Banderas corregidas mediante iconos SVG / diseño robusto */
         .hero-languages {
             display: flex;
             gap: 1rem;
@@ -150,14 +150,23 @@
         .hero-lang-badge {
             background: rgba(0, 255, 102, 0.05);
             border: 1px solid rgba(0, 255, 102, 0.2);
-            padding: 0.3rem 0.7rem;
+            padding: 0.35rem 0.8rem;
             border-radius: 6px;
             font-size: 0.85rem;
             font-family: 'JetBrains Mono', monospace;
             color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
         }
 
         .hero-location {
@@ -266,7 +275,7 @@
             color: var(--accent-green);
         }
 
-        /* Grid Educacion, Certs y Competencias */
+        /* Grid general de tarjetas */
         .profile-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -317,6 +326,57 @@
         .edu-sub {
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        /* Proyectos de GRC & Ciberseguridad (2 columnas, formato borrador) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px dashed var(--accent-cyan);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        .draft-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
+
+        .project-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .skills-chips {
@@ -474,13 +534,14 @@
         <div class="logo">&lt;JarvinNavas /&gt;</div>
         <ul class="nav-links">
             <li><a href="#hero">Inicio</a></li>
-            <li><a href="#profile">Educación & Skills</a></li>
+            <li><a href="#projects-section">Proyectos</a></li>
+            <li><a href="#profile">Formación & Skills</a></li>
             <li><a href="#experience">Experiencia</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
 
-    <!-- Sección Hero (Nombre en una línea + Idiomas arriba + Ubicación + Foto) -->
+    <!-- Sección Hero -->
     <section id="hero" class="hero">
         <div class="hero-grid">
             <div class="hero-info">
@@ -488,11 +549,20 @@
                 <h1>Jarvin Daniel Navas Prieto</h1>
                 <div class="hero-subtitle">Ingeniero de Sistemas & Especialista en Seguridad Informática</div>
                 
-                <!-- Idiomas con banderas antes de la ubicación -->
+                <!-- Idiomas con banderas oficiales renderizadas con imágenes estables -->
                 <div class="hero-languages">
-                    <div class="hero-lang-badge"><span>🇨🇴</span> Español (Nativo)</div>
-                    <div class="hero-lang-badge"><span>🇺🇸</span> Inglés (Avanzado)</div>
-                    <div class="hero-lang-badge"><span>🇧🇷</span> Portugués (Competente)</div>
+                    <div class="hero-lang-badge">
+                        <img src="https://flagcdn.com/w20/co.png" srcset="https://flagcdn.com/w40/co.png 2x" alt="Bandera Colombia" class="flag-icon"> 
+                        Español (Nativo)
+                    </div>
+                    <div class="hero-lang-badge">
+                        <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" alt="Bandera Estados Unidos" class="flag-icon"> 
+                        Inglés (Avanzado)
+                    </div>
+                    <div class="hero-lang-badge">
+                        <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" alt="Bandera Brasil" class="flag-icon"> 
+                        Portugués (Competente)
+                    </div>
                 </div>
 
                 <div class="hero-location"><i class="fas fa-map-marker-alt" style="color: var(--accent-green);"></i> Bucaramanga / Floridablanca, Santander, Colombia</div>
@@ -502,7 +572,7 @@
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="https://app.notion.com/p/Jarvin-Navas-3657ea0beb71802684b6e4d959a935a6" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Ver Proyectos & Casos</a>
+                    <a href="#projects-section" class="btn btn-primary"><i class="fas fa-project-diagram"></i> Ver Proyectos GRC</a>
                     <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contacto</a>
                 </div>
             </div>
@@ -511,6 +581,29 @@
                 <div class="profile-img-container">
                     <img src="1785013426599.jpg" alt="Jarvin Daniel Navas Prieto">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartado de Proyectos de GRC & Ciberseguridad (Antes de Formación y Competencias) -->
+    <section id="projects-section">
+        <h2 class="section-title">Proyectos <span>GRC & Ciberseguridad</span></h2>
+        
+        <div class="projects-grid">
+            <!-- Proyecto Borrador 1 -->
+            <div class="project-card">
+                <span class="draft-badge">Borrador</span>
+                <h3>Implementación SGSI bajo ISO/IEC 27001</h3>
+                <p>Diseño y estructuración de un Sistema de Gestión de Seguridad de la Información adaptado a normativas internacionales, declaración de aplicabilidad y matrices de evaluación de riesgos.</p>
+                <div class="project-meta"><i class="fas fa-code-branch"></i> En desarrollo / Próximamente</div>
+            </div>
+
+            <!-- Proyecto Borrador 2 -->
+            <div class="project-card">
+                <span class="draft-badge">Borrador</span>
+                <h3>Framework de Third-Party Risk Management (TPRM)</h3>
+                <p>Desarrollo metodológico para la evaluación y mitigación de riesgos asociados a proveedores externos, cuestionarios de cumplimiento y control de terceras partes.</p>
+                <div class="project-meta"><i class="fas fa-code-branch"></i> En desarrollo / Próximamente</div>
             </div>
         </div>
     </section>
