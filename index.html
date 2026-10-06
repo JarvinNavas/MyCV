@@ -273,7 +273,7 @@
             color: var(--accent-green);
         }
 
-        /* Proyectos GRC & Ciberseguridad (4 proyectos en 2 columnas) */
+        /* Proyectos GRC & Ciberseguridad */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -331,7 +331,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Tarjetas de Formación y Competencias */
+        /* Formación y Competencias */
         .profile-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -396,7 +396,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Línea de tiempo interactiva de Experiencia Laboral */
+        /* Línea de tiempo interactiva */
         .timeline {
             max-width: 850px;
             margin: 0 auto;
@@ -473,48 +473,87 @@
             color: var(--text-main);
         }
 
-        /* Footer / Contacto */
+        /* Footer / Contacto Modificado en 2 bloques limpios */
         footer {
-            text-align: center;
-            padding: 5rem 2rem;
+            padding: 5rem 8%;
             background: #010308;
             border-top: 1px solid var(--border-color);
         }
 
-        .contact-box {
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 12px;
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
         }
 
-        .social-footer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-footer a {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+        .contact-intro h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
             color: var(--text-main);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+        }
+
+        .contact-intro p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-links-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-row {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.9rem 1.2rem;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all 0.2s;
+            gap: 1rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        .social-footer a:hover {
+        .contact-row:hover {
             border-color: var(--accent-green);
+            transform: translateX(4px);
+        }
+
+        .contact-row i {
+            font-size: 1.2rem;
             color: var(--accent-green);
-            transform: translateY(-3px);
+            width: 24px;
+            text-align: center;
+        }
+
+        .contact-row span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .footer-bottom {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .terminal-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-green);
         }
 
         .copy {
@@ -540,6 +579,18 @@
             }
             .hero-graphic {
                 margin-top: 1rem;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .contact-row {
+                justify-content: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
             .nav-links {
                 display: none;
@@ -607,12 +658,11 @@
         </div>
     </section>
 
-    <!-- Proyectos GRC & Ciberseguridad (4 ideas de proyectos en borrador) -->
+    <!-- Proyectos GRC & Ciberseguridad -->
     <section id="projects-section">
         <h2 class="section-title">Proyectos <span>GRC & Ciberseguridad</span></h2>
         
         <div class="projects-grid">
-            <!-- Borrador 1 -->
             <div class="project-card">
                 <span class="draft-badge">Borrador</span>
                 <h3>Implementación SGSI bajo ISO/IEC 27001</h3>
@@ -620,7 +670,6 @@
                 <div class="project-meta"><i class="fas fa-code-branch"></i> En desarrollo / Próximamente</div>
             </div>
 
-            <!-- Borrador 2 -->
             <div class="project-card">
                 <span class="draft-badge">Borrador</span>
                 <h3>Framework de Third-Party Risk Management (TPRM)</h3>
@@ -628,7 +677,6 @@
                 <div class="project-meta"><i class="fas fa-code-branch"></i> En desarrollo / Próximamente</div>
             </div>
 
-            <!-- Borrador 3 -->
             <div class="project-card">
                 <span class="draft-badge">Borrador</span>
                 <h3>Matriz de Análisis de Causa Raíz para Incidentes</h3>
@@ -636,7 +684,6 @@
                 <div class="project-meta"><i class="fas fa-code-branch"></i> En desarrollo / Próximamente</div>
             </div>
 
-            <!-- Borrador 4 -->
             <div class="project-card">
                 <span class="draft-badge">Borrador</span>
                 <h3>Auditoría de Cumplimiento Normativo (Ley 1581)</h3>
@@ -651,7 +698,6 @@
         <h2 class="section-title">Formación <span>& Competencias</span></h2>
         
         <div class="profile-grid">
-            <!-- Educación -->
             <div class="card">
                 <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
                 <div class="edu-item">
@@ -664,7 +710,6 @@
                 </div>
             </div>
 
-            <!-- Certificaciones Adicionales -->
             <div class="card">
                 <h3><i class="fas fa-certificate"></i> Certificados Adicionales</h3>
                 <div class="cert-item">
@@ -677,7 +722,6 @@
                 </div>
             </div>
 
-            <!-- Competencias -->
             <div class="card">
                 <h3><i class="fas fa-cogs"></i> Competencias</h3>
                 <div class="skills-chips">
@@ -693,12 +737,11 @@
         </div>
     </section>
 
-    <!-- Experiencia Laboral (Línea de tiempo interactiva) -->
+    <!-- Experiencia Laboral -->
     <section id="experience">
         <h2 class="section-title">Experiencia <span>Laboral</span></h2>
         
         <div class="timeline">
-            <!-- Rappi -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -712,7 +755,6 @@
                 </div>
             </div>
 
-            <!-- Teleperformance -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -727,23 +769,38 @@
         </div>
     </section>
 
-    <!-- Zona de Contacto Final -->
+    <!-- Zona de Contacto Final en Dos Bloques Limpios -->
     <footer id="contact">
-        <div class="contact-box">
-            <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-main);">¿Conectamos?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Abierto a oportunidades y proyectos desafiantes en ciberseguridad, GRC e ingeniería.</p>
-            
-            <div class="social-footer">
-                <a href="https://www.linkedin.com/in/jarvindanielnavasprieto/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/JarvinNavas" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://app.notion.com/p/Jarvin-Navas-3657ea0beb71802684b6e4d959a935a6" target="_blank" title="Notion / Casos de Estudio"><i class="fas fa-book-open"></i></a>
-                <a href="mailto:navasjarvin@gmail.com" title="Correo Electrónico"><i class="fas fa-envelope"></i></a>
+        <div class="contact-container">
+            <div class="contact-intro">
+                <h3>¿Conectamos?</h3>
+                <p>Abierto a oportunidades y proyectos desafiantes en ciberseguridad, GRC e ingeniería de sistemas.</p>
             </div>
             
-            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent-green);"><i class="fas fa-terminal"></i> navasjarvin@security:~$ ready_to_work</p>
+            <div class="contact-links-box">
+                <a href="https://www.linkedin.com/in/jarvindanielnavasprieto/" target="_blank" class="contact-row">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>/jarvindanielnavasprieto</span>
+                </a>
+                <a href="https://github.com/JarvinNavas" target="_blank" class="contact-row">
+                    <i class="fab fa-github"></i>
+                    <span>/JarvinNavas</span>
+                </a>
+                <a href="https://app.notion.com/p/Jarvin-Navas-3657ea0beb71802684b6e4d959a935a6" target="_blank" class="contact-row">
+                    <i class="fas fa-book-open"></i>
+                    <span>Casos de Estudio (Notion)</span>
+                </a>
+                <a href="mailto:navasjarvin@gmail.com" class="contact-row">
+                    <i class="fas fa-envelope"></i>
+                    <span>navasjarvin@gmail.com</span>
+                </a>
+            </div>
         </div>
-        
-        <p class="copy">&copy; 2026 Jarvin Daniel Navas Prieto. Todos los derechos reservados.</p>
+
+        <div class="footer-bottom">
+            <p class="terminal-prompt"><i class="fas fa-terminal"></i> navasjarvin@security:~$ ready_to_work</p>
+            <p class="copy">&copy; 2026 Jarvin Daniel Navas Prieto. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <!-- Scripts para el Fondo de Partículas Interactivo de Hacking (particles.js) -->
