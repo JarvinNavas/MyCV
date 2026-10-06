@@ -102,7 +102,7 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
+            grid-template-columns: 1.3fr 0.7fr;
             gap: 3rem;
             align-items: center;
             width: 100%;
@@ -121,7 +121,7 @@
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
             letter-spacing: -0.5px;
@@ -198,34 +198,34 @@
             color: var(--accent-cyan);
         }
 
-        /* Hero Graphic Lado Derecho */
+        /* Foto de perfil en Hero Lateral */
         .hero-graphic {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .shield-box {
-            width: 220px;
-            height: 220px;
-            background: var(--card-bg);
-            border: 2px solid rgba(0, 255, 102, 0.3);
+        .profile-img-container {
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 30px rgba(0, 255, 102, 0.15);
-            animation: pulse-shield 3s infinite alternate;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.25);
+            animation: pulse-glow 3s infinite alternate;
         }
 
-        .shield-box i {
-            font-size: 5rem;
-            color: var(--accent-green);
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
         }
 
-        @keyframes pulse-shield {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 102, 0.15); }
-            100% { transform: scale(1.03); box-shadow: 0 0 35px rgba(0, 255, 102, 0.3); }
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 102, 0.2); }
+            100% { transform: scale(1.02); box-shadow: 0 0 35px rgba(0, 255, 102, 0.4); }
         }
 
         /* Sections */
@@ -243,30 +243,6 @@
 
         .section-title span {
             color: var(--accent-green);
-        }
-
-        /* Idiomas */
-        .lang-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .lang-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.2rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .lang-card span {
-            font-size: 1.5rem;
-            display: block;
-            margin-bottom: 0.3rem;
         }
 
         /* Grid Educacion, Certs y Competencias */
@@ -320,6 +296,31 @@
         .edu-sub {
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        /* Estilos de Idiomas Integrados abajo de Educación */
+        .languages-section {
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .languages-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+
+        .lang-badge {
+            background: rgba(0, 255, 102, 0.05);
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .skills-chips {
@@ -449,7 +450,7 @@
                 text-align: center;
             }
             .hero h1 {
-                white-space: normal; /* Permite salto de línea en móviles */
+                white-space: normal;
                 font-size: 2rem;
             }
             .hero-location {
@@ -459,7 +460,7 @@
                 justify-content: center;
             }
             .hero-graphic {
-                display: none; /* Oculta el círculo decorativo lateral en móviles pequeños para ganar espacio */
+                margin-top: 1rem;
             }
             .nav-links {
                 display: none;
@@ -483,7 +484,7 @@
         </ul>
     </nav>
 
-    <!-- Sección Hero (Nombre en una línea + Perfil lateral + Botones) -->
+    <!-- Sección Hero (Nombre en una línea + Perfil lateral con Foto + Botones) -->
     <section id="hero" class="hero">
         <div class="hero-grid">
             <div class="hero-info">
@@ -503,38 +504,19 @@
             </div>
 
             <div class="hero-graphic">
-                <div class="shield-box">
-                    <i class="fas fa-shield-alt"></i>
+                <div class="profile-img-container">
+                    <img src="1785013426599.jpg" alt="Jarvin Daniel Navas Prieto">
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Idiomas -->
-    <div class="lang-container">
-        <div class="lang-card">
-            <span>🇨🇴</span>
-            <strong>Español</strong>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">Nativo</p>
-        </div>
-        <div class="lang-card">
-            <span>🇺🇸</span>
-            <strong>Inglés</strong>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">Avanzado</p>
-        </div>
-        <div class="lang-card">
-            <span>🇧🇷</span>
-            <strong>Portugués</strong>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">Competente</p>
-        </div>
-    </div>
 
     <!-- Sección Educación, Certificaciones y Competencias -->
     <section id="profile">
         <h2 class="section-title">Formación <span>& Competencias</span></h2>
         
         <div class="profile-grid">
-            <!-- Educación -->
+            <!-- Educación & Idiomas integrados abajo -->
             <div class="card">
                 <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
                 <div class="edu-item">
@@ -545,9 +527,19 @@
                     <p class="edu-title">Ingeniero de Sistemas</p>
                     <p class="edu-sub">Universidad Nacional Abierta y a Distancia (UNAD)</p>
                 </div>
+
+                <!-- Idiomas agregados abajo de Ingeniero de Sistemas -->
+                <div class="languages-section">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-main); font-weight: 600;"><i class="fas fa-language" style="color: var(--accent-green);"></i> Idiomas</p>
+                    <div class="languages-grid">
+                        <div class="lang-badge"><span>🇨🇴</span> Español (Nativo)</div>
+                        <div class="lang-badge"><span>🇺🇸</span> Inglés (Avanzado)</div>
+                        <div class="lang-badge"><span>🇧🇷</span> Portugués (Competente)</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Certificaciones Adicionales -->
+            <!-- Certificaciones Adicionales (Sin SC-401) -->
             <div class="card">
                 <h3><i class="fas fa-certificate"></i> Certificados Adicionales</h3>
                 <div class="cert-item">
@@ -557,10 +549,6 @@
                 <div class="cert-item" style="margin-top: 1rem;">
                     <p class="edu-title">Ciberseguridad de Google</p>
                     <p class="edu-sub">Coursera</p>
-                </div>
-                <div class="cert-item" style="margin-top: 1rem;">
-                    <p class="edu-title" style="color: #f59e0b;">SC-401: Administrador de Seguridad de Info.</p>
-                    <p class="edu-sub">Microsoft (En Curso)</p>
                 </div>
             </div>
 
@@ -621,12 +609,13 @@
             <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Abierto a oportunidades y proyectos desafiantes en ciberseguridad, GRC e ingeniería.</p>
             
             <div class="social-footer">
+                <a href="https://www.linkedin.com/in/jarvindanielnavasprieto/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/JarvinNavas" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://app.notion.com/p/Jarvin-Navas-3657ea0beb71802684b6e4d959a935a6" target="_blank" title="Notion / Casos de Estudio"><i class="fas fa-book-open"></i></a>
-                <a href="mailto:tu-correo@email.com" title="Correo Electrónico"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:navasjarvin@gmail.com" title="Correo Electrónico"><i class="fas fa-envelope"></i></a>
             </div>
             
-            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent-green);"><i class="fas fa-terminal"></i> jnavas@security:~$ ready_to_work</p>
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent-green);"><i class="fas fa-terminal"></i> navasjarvin@security:~$ ready_to_work</p>
         </div>
         
         <p class="copy">&copy; 2026 Jarvin Daniel Navas Prieto. Todos los derechos reservados.</p>
