@@ -139,6 +139,27 @@
             margin-bottom: 1.2rem;
         }
 
+        /* Contenedor de Idiomas Superiores */
+        .hero-languages {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-lang-badge {
+            background: rgba(0, 255, 102, 0.05);
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
         .hero-location {
             font-size: 0.95rem;
             color: var(--text-muted);
@@ -298,31 +319,6 @@
             color: var(--text-muted);
         }
 
-        /* Estilos de Idiomas Integrados abajo de Educación */
-        .languages-section {
-            margin-top: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .languages-grid {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 0.6rem;
-        }
-
-        .lang-badge {
-            background: rgba(0, 255, 102, 0.05);
-            border: 1px solid rgba(0, 255, 102, 0.2);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
         .skills-chips {
             display: flex;
             flex-wrap: wrap;
@@ -453,7 +449,7 @@
                 white-space: normal;
                 font-size: 2rem;
             }
-            .hero-location {
+            .hero-location, .hero-languages {
                 justify-content: center;
             }
             .cta-buttons {
@@ -484,13 +480,21 @@
         </ul>
     </nav>
 
-    <!-- Sección Hero (Nombre en una línea + Perfil lateral con Foto + Botones) -->
+    <!-- Sección Hero (Nombre en una línea + Idiomas arriba + Ubicación + Foto) -->
     <section id="hero" class="hero">
         <div class="hero-grid">
             <div class="hero-info">
                 <div class="terminal-tag"># GRC_SPECIALIST &amp; CYBERSECURITY</div>
                 <h1>Jarvin Daniel Navas Prieto</h1>
                 <div class="hero-subtitle">Ingeniero de Sistemas & Especialista en Seguridad Informática</div>
+                
+                <!-- Idiomas con banderas antes de la ubicación -->
+                <div class="hero-languages">
+                    <div class="hero-lang-badge"><span>🇨🇴</span> Español (Nativo)</div>
+                    <div class="hero-lang-badge"><span>🇺🇸</span> Inglés (Avanzado)</div>
+                    <div class="hero-lang-badge"><span>🇧🇷</span> Portugués (Competente)</div>
+                </div>
+
                 <div class="hero-location"><i class="fas fa-map-marker-alt" style="color: var(--accent-green);"></i> Bucaramanga / Floridablanca, Santander, Colombia</div>
                 
                 <div class="hero-bio">
@@ -516,7 +520,7 @@
         <h2 class="section-title">Formación <span>& Competencias</span></h2>
         
         <div class="profile-grid">
-            <!-- Educación & Idiomas integrados abajo -->
+            <!-- Educación -->
             <div class="card">
                 <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
                 <div class="edu-item">
@@ -527,19 +531,9 @@
                     <p class="edu-title">Ingeniero de Sistemas</p>
                     <p class="edu-sub">Universidad Nacional Abierta y a Distancia (UNAD)</p>
                 </div>
-
-                <!-- Idiomas agregados abajo de Ingeniero de Sistemas -->
-                <div class="languages-section">
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-main); font-weight: 600;"><i class="fas fa-language" style="color: var(--accent-green);"></i> Idiomas</p>
-                    <div class="languages-grid">
-                        <div class="lang-badge"><span>🇨🇴</span> Español (Nativo)</div>
-                        <div class="lang-badge"><span>🇺🇸</span> Inglés (Avanzado)</div>
-                        <div class="lang-badge"><span>🇧🇷</span> Portugués (Competente)</div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Certificaciones Adicionales (Sin SC-401) -->
+            <!-- Certificaciones Adicionales -->
             <div class="card">
                 <h3><i class="fas fa-certificate"></i> Certificados Adicionales</h3>
                 <div class="cert-item">
